@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+<watch>
+  <id type="integer">1</id>
+  <title type="string">SuperDuper watch</title>
+  <price type="integer">300</price>
+  <desc type="string">Buy me now!</desc>
+</watch>
+<watch>
+  <id type="integer">2</id>
+  <title type="string">Lame watch</title>
+  <price type="integer">10</price>
+  <desc type="string">Meh!</desc>
+</watch>
+<watch>
+  <id type="integer">3</id>
+  <title type="string">wow</title>
+  <price type="integer">999</price>
+  <desc type="string">such!</desc>
+</watch>
+</data>

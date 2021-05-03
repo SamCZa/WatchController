@@ -1,0 +1,29 @@
+parameters:
+	useDB: false
+	xmlUrl: 'https://gist.githubusercontent.com/SamCZa/3d0642400ec8c60def2749db79797460/raw/b295a77fed1a62210d88c2e599e87433982e0dcd/watches.xml'
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+
+services:
+	- App\Router\RouterFactory::createRouter
+	- App\Repositories\WatchRepository
+	- App\Parsers\WatchParser(%xmlUrl%)
+	-
+		class: \App\Controllers\WatchController
+		arguments:
+			useDB: %useDB%
+			cache: Nette\Caching\Cache(namespace: 'watch')
